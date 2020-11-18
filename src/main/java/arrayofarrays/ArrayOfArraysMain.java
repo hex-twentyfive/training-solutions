@@ -1,25 +1,22 @@
 package arrayofarrays;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ArrayOfArraysMain {
 
-    public int[][] multiplicationTable(int size) {
-        int[][] tabla = new int[size][size];
 
+    public int[][] multiplicationTable(int size) {
+        int[][] multiplicationTable = new int[size][size];
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                tabla[i][j] = (i + 1) * (j + 1);
+                multiplicationTable[i][j] = (i + 1) * (j + 1);
             }
         }
-
-        return tabla;
+        return multiplicationTable;
     }
 
-
     public void printArrayOfArrays(int[][] a) {
-        for (int[] i : a) {
+        for (int i[] : a) {
             for (int j : i) {
                 if (j < 10) {
                     System.out.print("  ");
@@ -33,41 +30,43 @@ public class ArrayOfArraysMain {
         }
     }
 
-
     public int[][] triangularMatrix(int size) {
-        int[][] haromszog = new int[size][];
-        for (int i = 0; i < size; i++) {
-            haromszog[i] = new int[i + 1];
-            for (int j = 0; j <= i; j++) {
-                haromszog[i][j] = i;
+        int[][] triangularMatrix = new int[size][];
+        for (int i = 0; i < triangularMatrix.length; i++) {
+            triangularMatrix[i] = new int[i + 1];
+            for (int j = 0; j < i + 1; j++) {
+                triangularMatrix[i][j] = i;
             }
         }
-        return haromszog;
+        return triangularMatrix;
     }
 
-
-    public int[][] getValues(){
-        int[][] value = new int[12][];
-        int [] napok = {31,28,31,30,31,30,31,31,30,31,30,31};
-        for(int i=0;i<napok.length;i++){
-            value[i]= new int [napok[i]];
+    public int[][] getValues() {
+        int[][] values = new int[12][];
+        int[] numberOfDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        for (int i = 0; i < numberOfDays.length; i++) {
+            values[i] = new int[numberOfDays[i]];
         }
-
-        return value;
+        return values;
     }
 
     public static void main(String[] args) {
-        ArrayOfArraysMain array = new ArrayOfArraysMain();
+
+        ArrayOfArraysMain transArrayOfArraysMain = new ArrayOfArraysMain();
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Kérem adjon meg egy számot! ");
-        int size = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Szorzótábla");
-        array.printArrayOfArrays(array.multiplicationTable(size));
-        System.out.println("Háromszög");
-        array.printArrayOfArrays(array.triangularMatrix(size));
-        System.out.println("év/nap érték");
-        array.printArrayOfArrays(array.getValues());
+
+        System.out.println("Kérem adjon meg egy számot, ami alapján a tömb ábrázolások megtörténnek! ");
+        int inputNumber = scanner.nextInt();
+
+        System.out.println("\nSzorzótábla: ");
+        transArrayOfArraysMain.printArrayOfArrays(transArrayOfArraysMain.multiplicationTable(inputNumber));
+
+        System.out.println("\nHáromszög mátrix ábrázolása: ");
+        transArrayOfArraysMain.printArrayOfArrays(transArrayOfArraysMain.triangularMatrix(inputNumber));
+
+        System.out.println("\nÉv nap érték: ");
+        transArrayOfArraysMain.printArrayOfArrays(transArrayOfArraysMain.getValues());
+
     }
 }
-
