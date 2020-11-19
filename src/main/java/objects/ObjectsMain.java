@@ -16,7 +16,7 @@ public class ObjectsMain {
         System.out.println("\n" + emptyBook);
 
         if (emptyBook == null) {
-            System.out.println("Based on the test, the value of the emptyBooks variable is \'null\'!");
+            System.out.println("Based on the test, the value of the emptyBooks variable is \'null\'! ");
         }
 
         Book book = new Book();

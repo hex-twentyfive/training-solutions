@@ -1,4 +1,4 @@
 package objects;
 
-public class Book {
+public class Book  {
 }
