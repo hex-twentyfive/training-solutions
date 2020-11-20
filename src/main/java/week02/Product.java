@@ -1,14 +1,11 @@
 package week02;
 
-import java.util.Scanner;
-
-import java.util.Scanner;
-
 public class Product {
+
     private String name;
     private String code;
 
-    public Product(String name, String code) {
+    public Product (String name, String code) {
         this.name = name;
         this.code = code;
     }
@@ -21,38 +18,38 @@ public class Product {
         return code;
     }
 
-    public boolean areTheyEqual(Product p) {
+    public boolean areTheyEqual (Product p) {
 
-        return p.getName().equals(name) && Math.abs(code.length()-p.getCode().length())<2;
-    }
+        boolean equality = name.equals(p.getName());
 
+        int lenghtDifference = code.length() - p.code.length();
+        boolean lengthCriterion = Math.abs(lenghtDifference) < 2 ;
+
+        return   equality && lengthCriterion;
+    }           //2. verzió // p.getname() a paraméteren van meghívva
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Adja meg az első termék nevét! ");
-        String name = scanner.nextLine();
-        System.out.println("Adja meg a termék kódját");
-        String code = scanner.nextLine();
 
 
-        Product termek = new Product(name, code);
-        System.out.println("Adja meg a második termék nevét! ");
-        name = scanner.nextLine();
-        System.out.println("Adja meg a termék kódját");
-        code = scanner.nextLine();
+        String testProduct1 = "Brick";
+        String testCode1 = "1911";
+        System.out.println("The 1st Product name: " + testProduct1 + "   Product code: " + testCode1);
 
-        Product termek2 = new Product(name, code);
+        Product instProduct1 = new Product(testProduct1, testCode1);
 
+        String testProduct2 = "Chiseled  brick";
+        String testCode2 = "1912";
+        System.out.println("The 2nd Product name: " + testProduct2 + "   Product code: " + testCode2);
 
-        System.out.println("Adja meg a harmadik termék nevét! ");
-        name = scanner.nextLine();
-        System.out.println("Adja meg a termék kódját");
-        code = scanner.nextLine();
+        Product instProduct2 = new Product(testProduct2, testCode2);
 
-        Product termek3 = new Product(name, code);
+        String testProduct3 = "Brick";
+        String testCode3 = "19110";
+        System.out.println("The 3rd Product name: " + testProduct3 + "   Product code: " + testCode3);
 
-        System.out.println("Megegyezik az első és a második termék? ==>"+ termek.areTheyEqual(termek2));
-        System.out.println("Megegyezik az első és a harmadik termék? ==>"+ termek.areTheyEqual(termek3));
+        Product instProduct3 = new Product(testProduct3, testCode3);
 
+        System.out.println("\nAre the first and second products the same? ==> " + instProduct1.areTheyEqual(instProduct2));
+        System.out.println("Are the first and third products the same? ==> " + instProduct1.areTheyEqual(instProduct3));
     }
 }
