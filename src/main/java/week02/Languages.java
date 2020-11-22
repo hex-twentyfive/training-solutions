@@ -8,17 +8,17 @@ public class Languages {
     public static void main(String[] args) {
 
         String[] programingLanguagesArray = {"Java", "Python", "JavaScript"};
-        List<String> programingLanguagesList = Arrays.asList(programingLanguagesArray);
+        List<String> programingLanguages = Arrays.asList(programingLanguagesArray);
 
         System.out.println("A tömb tartalma: ");
-        for (String looksArround : programingLanguagesList) {
-            System.out.print(looksArround + ", ");
+        for (String looksArroundOriginalList : programingLanguages) {
+            System.out.print(looksArroundOriginalList + ", ");
         }
 
         System.out.println("\n\nAz öt karakternél hoszabb programozási nyelvek a következők: ");
-        for (String looksArround : programingLanguagesList) {
-            if (looksArround.length() > 4) {
-                System.out.println(looksArround);
+        for (String looksArroundSelection : programingLanguages) {
+            if (looksArroundSelection.length() > 5) {
+                System.out.println(looksArroundSelection);
             }
         }
 
