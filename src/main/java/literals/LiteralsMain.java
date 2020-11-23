@@ -4,14 +4,14 @@ public class LiteralsMain {
 
     public static void main(String[] args) {
 
-        String number = "12";
+        String numbers = "12";
 
         int a = 1;
         int b = 2;
 
-        String number2 = "" + a + b;
+        String numbers2 = "" + a + b;
 
-        System.out.println(number2);
+        System.out.println(numbers2);
 
         double quotient = 3 / 4;
         System.out.println(quotient);
