@@ -8,7 +8,7 @@ public class Capsules {
 /*    A Capsules osztály egy ArrayList attribútumban tárolja a betett kapszulákat, méghozzá a színüket String-ként.
     A Capsules osztálynak legyen egy addLast(String), addFirst(String), removeFirst(), removeLast() metódusa, mely betesz, illetve kivesz kapszulákat a csőből.
     Legyen egy List<String> getColors() metódusa, mely visszaadja a kapszulákat tartalmazó listát, hogy ki lehessen írni.
-    Írj egy main() metódust, mely teszteli a metódusok működését.*/
+    Írj egy main() metódust, mely teszteli a metódusok működését.  */
 
     private List<String> capsulesList = new ArrayList<>();
 
