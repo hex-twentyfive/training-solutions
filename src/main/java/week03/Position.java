@@ -40,6 +40,7 @@ public class Position {
         for (Position p : lista) {
             if (p.getBonus() > 150000) {
                 System.out.println(p.toString());
+
             }
         }
 
