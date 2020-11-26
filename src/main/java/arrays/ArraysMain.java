@@ -51,7 +51,7 @@ public class ArraysMain {
 
         int multiplicationNumber = 5;
 
-        double[] day1 = { 4, 5, 7.5, 9.5, 6};
+        double[] day1 = { 4, 5, 7.5, 9.5, 6.5};
         double[] day2 = { 4, 5, 8, 10.5, 8};
         double[] day3 = { 4, 5, 8, 10.5, 8};
 
