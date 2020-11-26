@@ -5,45 +5,74 @@ import java.util.List;
 
 public class Capsules {
 
-    private List<String> capsules = new ArrayList<>();
+/*    A Capsules osztály egy ArrayList attribútumban tárolja a betett kapszulákat, méghozzá a színüket String-ként.
+    A Capsules osztálynak legyen egy addLast(String), addFirst(String), removeFirst(), removeLast() metódusa, mely betesz, illetve kivesz kapszulákat a csőből.
+    Legyen egy List<String> getColors() metódusa, mely visszaadja a kapszulákat tartalmazó listát, hogy ki lehessen írni.
+    Írj egy main() metódust, mely teszteli a metódusok működését.*/
 
-    public void addLast(String colour) {
-        capsules.add(colour);
+    private List<String> capsulesList = new ArrayList<>();
+
+    public void addLast(String coloredCapsule) {
+
+        capsulesList.add(coloredCapsule);
     }
 
-    public void addFirst(String colour){
-        capsules.add(0, colour);
+    public void addFirst(String coloredCapsule) {
+
+        capsulesList.add(0, coloredCapsule);
     }
 
     public void removeFirst() {
-        capsules.remove(0);
+
+        capsulesList.remove(0);
     }
 
     public void removeLast() {
-        capsules.remove(capsules.size()-1);
+
+        int capsuleListSize = capsulesList.size();
+
+        capsulesList.remove(capsuleListSize - 1);
     }
 
     public List<String> getColors() {
-        return capsules;
+
+        return capsulesList;
     }
+
 
     public static void main(String[] args) {
 
-        Capsules c = new Capsules();
-        c.addFirst("fehér");
-        c.addLast("szürke");
-        c.addFirst("cián");
-        c.addLast("magenta");
-        c.addFirst("sárga");
-        c.addLast("fekete");
+        String blackCapsule = "Fekete";
+        String whiteCapsule = "Fehér";
+        String blueCapsule = "Kék";
+        String greenCapsule = "Zöld";
+        String yellowCapsule = "Sárga";
 
-        System.out.println(c.getColors());
+        Capsules instCapsules = new Capsules();
 
-        c.removeFirst();
-        System.out.println(c.getColors());
+        System.out.println("\n A műanyag cső üres  --> " + instCapsules.getColors());
 
-        c.removeLast();
-        System.out.println(c.getColors());
+        instCapsules.addFirst(yellowCapsule);
+        instCapsules.addFirst(greenCapsule);
+        instCapsules.addFirst(blueCapsule);
+        instCapsules.addFirst(whiteCapsule);
+        instCapsules.addFirst(blackCapsule);
+
+        System.out.println("\n A műanyag csőbe helyezünk kapszulákat az öt szín mindegyikéből (addFirst()) --> " + instCapsules.getColors());
+
+        instCapsules.addLast(blackCapsule);
+
+        System.out.println("\n Hozzá adunk utolsó elemként egy fekett kapszulát (addLast()) --> " + instCapsules.getColors());
+
+        instCapsules.removeFirst();
+
+        System.out.println("\n Eltávolítjuk az első kapszulát (removeFirst()) --> " + instCapsules.getColors());
+
+        instCapsules.removeLast();
+
+        System.out.println("\n Eltávolítjuk az utolsó kapszulát (removeLast()) --> " + instCapsules.getColors());
+
+        System.out.println("\n A kapszulák végső állapota  -->  " + instCapsules.getColors());
 
     }
 }

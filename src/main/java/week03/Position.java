@@ -29,9 +29,9 @@ public class Position {
 
     public static void main(String[] args) {
         List<Position> lista = new ArrayList<>();
-        Position p1 = new Position("Lakatos Frodó", 112345);
-        Position p2 = new Position("Oláh Legolasz", 223456);
-        Position p3 = new Position("Kádas Smaug", 334567);
+        Position p1 = new Position("Lakatos Frodó", 112_345);
+        Position p2 = new Position("Oláh Legolasz", 223_456);
+        Position p3 = new Position("Kádas Smaug", 334_567);
 
         lista.add(p1);
         lista.add(p2);
