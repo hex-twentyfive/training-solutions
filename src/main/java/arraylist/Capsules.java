@@ -74,6 +74,16 @@ public class Capsules {
 
         System.out.println("\n A kapszulák végső állapota  -->  " + instCapsules.getColors());
 
+        // Bonus 1.
+
+        List<String> afterCleanList = instCapsules.getColors();
+
+        afterCleanList.clear();
+
+        System.out.println("\n A változóban tárolt eredeti lista értéke a clean parancs után --> " + afterCleanList);
+
+        System.out.println("\n Az eredeti lista értéke a változóra kiadott clean parancs után --> " + instCapsules.getColors());        // Az eredeti Lista értéke is törlődött!
+
     }
 }
 
