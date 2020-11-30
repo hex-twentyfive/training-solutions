@@ -5,7 +5,7 @@ public class Employee {
     private String name;
     private int yearOfBirth;
 
-    public Employee (String name, int yearOfBirth) {
+    public Employee(String name, int yearOfBirth) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
     }
@@ -18,4 +18,3 @@ public class Employee {
         return yearOfBirth;
     }
 }
-

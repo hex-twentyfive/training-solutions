@@ -7,30 +7,28 @@ public class Company {
 
     private List<Employee> employees = new ArrayList<>();
 
-    public Company(List<Employee> employees){
+    public Company(List<Employee> employees) {
         this.employees = employees;
     }
 
-    public void addEmployee(Employee ujDolgozo) {
-        employees.add(ujDolgozo);
+    public void addEmployee(Employee newWorker) {
+        employees.add(newWorker);
     }
 
-    public Employee findEmployeeByName(String name) {
-        for (Employee findEmp : employees) {
-            if (findEmp.getName().equals(name)) {
-                return findEmp;
+    public Employee findEmployeeByName(String inputName) {
+        for (Employee elements: employees) {
+            if (elements.getName().equals(inputName)) {
+                return elements;
             }
         }
         return null;
     }
 
     public List<String> listEmployeeNames() {
-        List<String> dolgozok = new ArrayList<>();
-        for (Employee dolgozo : employees) {
-            dolgozok.add(dolgozo.getName());
+        List<String> workerNames = new ArrayList<>();
+        for (Employee elements: employees) {
+            workerNames.add(elements.getName());
         }
-        return dolgozok;
+        return workerNames;
     }
-
 }
-

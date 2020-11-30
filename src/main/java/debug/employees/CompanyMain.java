@@ -7,27 +7,25 @@ public class CompanyMain {
 
     public static void main(String[] args) {
 
-        List<Employee> employees = new ArrayList<>();
+        List<Employee> testWorkers = new ArrayList<>();
 
-        Employee dolgozo1 = new Employee("Lakatos Frodó", 1980);
-        Employee dolgozo2 = new Employee("Orsós Szarumán", 1985);
-        Employee dolgozo3 = new Employee("Oláh Legolasz", 1969);
-        Employee dolgozo4 = new Employee("Kádas Smaug", 911);
+        Employee testWorker1 = new Employee("Lakatos Frodó", 1980);
+        Employee testWorker2 = new Employee("Orsós Szarumán", 1985);
+        Employee testWorker3 = new Employee("Oláh Legolasz", 1969);
+        Employee testWorker4 = new Employee("Kádas Smaug", 911);
 
+        Company instCompany = new Company(testWorkers);
 
+        instCompany.addEmployee(testWorker1);
+        instCompany.addEmployee(testWorker2);
+        instCompany.addEmployee(testWorker3);
+        instCompany.addEmployee(testWorker4);
 
-        Company company = new Company(employees);
+        System.out.println(instCompany.listEmployeeNames());
 
-        company.addEmployee(dolgozo1);
-        company.addEmployee(dolgozo2);
-        company.addEmployee(dolgozo3);
-        company.addEmployee(dolgozo4);
+        Employee testFind = instCompany.findEmployeeByName("Kádas Smaug");
+        System.out.println(testFind.getName());
 
-        System.out.println(company.listEmployeeNames());
-
-        Employee benneVanAListaban = company.findEmployeeByName("Kádas Smaug");
-        System.out.println(benneVanAListaban.getName());
 
     }
 }
-
