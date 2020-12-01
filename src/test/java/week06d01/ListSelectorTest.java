@@ -19,7 +19,7 @@ public class ListSelectorTest {
 
         List<String> testList = new ArrayList<>(Arrays.asList("alma", "kabát", "Géza", "kilóméter", "csütörtök"));
 
-        assertEquals("[almaGézacsütörtök]",lS.everySecondElementOfList(testList));
+        assertEquals("[alma, Géza, csütörtök]",lS.everySecondElementOfList(testList));
 
     }
 
