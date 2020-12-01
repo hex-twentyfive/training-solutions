@@ -21,11 +21,11 @@ public class ListSelector {
             selectedElements.append("[");
             for (int i = 0; i < inputList.size(); i++ ) {           // i += 2
                 if ( i % 2 == 0) {
-                selectedElements.append(inputList.get(i));
+                selectedElements.append(inputList.get(i)+", ");
                 }
             }
         }
-        return selectedElements.append("]").toString();
+        return selectedElements.substring( 0 , selectedElements.length()-2) + "]";
     }
 
 
