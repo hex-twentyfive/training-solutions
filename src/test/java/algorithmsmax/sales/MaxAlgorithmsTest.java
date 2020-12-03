@@ -35,6 +35,7 @@ public class MaxAlgorithmsTest {
         SalespersonWithFurthestBelowTargetSelector sWFBTS = new SalespersonWithFurthestBelowTargetSelector();
 
         assertEquals(-1_870_000, sWFBTS.SalespersonWithFurthestBelowTargetSelector(testSalespersons).getDifferenceBetweenTargetAndAmount());
+
     }
 
 }
