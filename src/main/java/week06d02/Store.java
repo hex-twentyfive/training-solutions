@@ -10,13 +10,17 @@ public class Store {
         this.productList = productList;
     }
 
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
     public int getProductByCategoryName(Category category) {
-        int sum = 0;
-        for (Product item: productList){
-            if (category==item.getCategory()){
-                sum++;
+        int filterCounter = 0;
+        for (Product elements: productList) {
+            if ( elements.getCategory() == category) {
+                filterCounter++;
             }
         }
-        return sum;
-    }
+        return filterCounter;
+   }
 }
