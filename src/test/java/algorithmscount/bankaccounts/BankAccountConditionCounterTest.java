@@ -14,8 +14,8 @@ public class BankAccountConditionCounterTest {
 
         List<BankAccount> testBankAccountList = new ArrayList<>();
         testBankAccountList.add(new BankAccount("Lakatos Frodó", "TRN73950",6_351_911));
-        testBankAccountList.add(new BankAccount("Lakatos Frodó", "TRN73951",1_095_150));
-        testBankAccountList.add(new BankAccount("Lakatos Frodó", "TRN73952",2_576_800));
+        testBankAccountList.add(new BankAccount("Oláh Legolas", "TRN73951",1_095_150));
+        testBankAccountList.add(new BankAccount("Kádas Smaug", "TRN73952",2_576_800));
         int limitNumber = 1_500_000;
         int limitNumber2 = 5_000_000;
 
