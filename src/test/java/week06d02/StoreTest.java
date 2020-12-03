@@ -3,25 +3,30 @@ package week06d02;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StoreTest {
+
     @Test
-    public void testList() {
+    public void testGetProductByCategoryName() {
 
-        List<Product> test = Arrays.asList(new Product("merchandise1",Category.OTHER,10000),
-                new Product("merchandise2",Category.DAIRY,500),
-                new Product("merchandise3",Category.FROZEN,1000),
-                new Product("merchandise4",Category.OTHER,10000),
-                new Product("merchandise5",Category.OTHER,10000)
-        );
+        List<Product> testProductList = new ArrayList<>();
+        testProductList.add(new Product("merchandise1",Category.DAIRY,500));
+        testProductList.add(new Product("merchandise2",Category.FROZEN,1_000));
+        testProductList.add(new Product("merchandise3",Category.OTHER,10_000));
+        testProductList.add(new Product("merchandise4",Category.OTHER,10_000));
+        testProductList.add(new Product("merchandise5",Category.FROZEN,10_000));
 
-        Store store = new Store(test);
+        Store s = new Store(testProductList);
 
-        assertEquals(3, store.getProductByCategoryName(Category.OTHER));
+        assertEquals(2, s.getProductByCategoryName(Category.FROZEN));
+        assertEquals(1, s.getProductByCategoryName(Category.DAIRY));
+        assertEquals(0, s.getProductByCategoryName(Category.BAKEDGOODS));
+        assertEquals(2, s.getProductByCategoryName(Category.OTHER));
     }
 
 }
