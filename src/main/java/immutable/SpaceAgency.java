@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SpaceAgency {
 
-    private List<Satellite> satellites = new ArrayList<>();                 //S
+    private List<Satellite> satellites = new ArrayList<>();
 
     public void registerSatellite(Satellite satellite) {                    //Regisztrálni lehet az útjukra indított eszközöket
         if (satellite == null) {                                            //a szatellit regisztrációnál nem kaphat null paramétert
@@ -48,4 +48,5 @@ public class SpaceAgency {
     private boolean isEmpty(String str) {
         return str == null || "".equals(str.trim());
     }
+
 }

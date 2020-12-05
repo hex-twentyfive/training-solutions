@@ -28,4 +28,5 @@ public class CelestialCoordinates {
     public String toString() {
         return "CelestialCoordinates: " + "x=" + x + ", y=" + y + ", z=" + z ;
     }
+
 }

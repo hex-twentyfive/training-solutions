@@ -1,6 +1,7 @@
 package immutable;
 
 public class Satellite {
+
     private CelestialCoordinates destinationCoordinates;
     private String registerIdent;
 
@@ -28,4 +29,5 @@ public class Satellite {
     private boolean isEmpty(String str) {
         return str == null || "".equals(str.trim());
     }
+
 }
