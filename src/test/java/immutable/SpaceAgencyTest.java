@@ -40,4 +40,5 @@ public class SpaceAgencyTest {
         //Then
         assertEquals("NCC170: CelestialCoordinates: x=20, y=20, z=35", sa.findSatelliteByRegisterIdent("NCC170").toString());
     }
+
 }

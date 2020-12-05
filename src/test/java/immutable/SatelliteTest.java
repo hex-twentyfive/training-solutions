@@ -22,5 +22,6 @@ public class SatelliteTest {
         //Then
         assertEquals("AAA001: CelestialCoordinates: x=15, y=15, z=30", satellite.toString());
     }
+
 }
 
