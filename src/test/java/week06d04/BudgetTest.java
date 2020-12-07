@@ -1,48 +1,49 @@
 package week06d04;
 
-
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BudgetTest {
 
-    private List<Item> itemList;
-    private Budget budget;
+    @Test
+    public void testGetItemByMonth() {
 
-    @BeforeEach
-    public void setUp() {
-        itemList = new ArrayList<>();
-        budget = new Budget(itemList);
+        List<Item> testList = new ArrayList<>();
+        testList.add(new Item(12_500,2,"Bill1"));
+        testList.add(new Item(15_000,3,"Bill2"));
+        testList.add(new Item(17_500,3,"Bill3"));
+        testList.add(new Item(20_000,3,"Bill4"));
+        testList.add(new Item(25_000,4,"Bill5"));
+        int testMonth1 = 2;
+        int testMonth3 = 3;
 
-        Item item1 = new Item(25000, 1, "bill1");
-        Item item2 = new Item(50000, 2, "bill2");
-        Item item3 = new Item(125000, 3, "bill3");
-        Item item4 = new Item(150000, 5, "bill4");
-        Item item5 = new Item(100000, 10, "bill5");
+        Budget budget = new Budget(testList);
 
-        itemList.add(item1);
-        itemList.add(item2);
-        itemList.add(item3);
-        itemList.add(item4);
-        itemList.add(item5);
+        assertEquals(1,budget.getItemByMonth(testMonth1).size());
+
+        assertEquals(3,budget.getItemByMonth(testMonth3).size());
+
+        assertEquals("Bill2", budget.getItemByMonth(testMonth3).get(0).getName());
+
+        System.out.println(budget.getItemByMonth(testMonth3));      //így a generált ToString() segítségével már értelmezhetően írja ki az Item-eket.
+
     }
 
     @Test
-    public void testBudget1() {
-        Assertions.assertEquals(1, budget.getItemsByMonth(2).size());
+    public void testGetItemByMonthWithIncorrectAssignment() {
+
+        List<Item> testList = new ArrayList<>();
+        Budget budget = new Budget(testList);
+
+        assertThrows(IllegalArgumentException.class, () -> budget.getItemByMonth(13));
+        assertThrows(IllegalArgumentException.class, () -> budget.getItemByMonth(0));
+
     }
 
-    @Test
-    public void testBudget2() {
-        Assertions.assertEquals("bill3", budget.getItemsByMonth(3).get(0).getName());
-    }
-
-    @Test
-    public void testBudget3() {
-        Assertions.assertEquals(50000, budget.getItemsByMonth(2).get(0).getPrice());
-    }
 }
