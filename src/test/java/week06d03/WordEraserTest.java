@@ -1,7 +1,8 @@
 package week06d03;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WordEraserTest {
 
@@ -14,7 +15,7 @@ public class WordEraserTest {
         String expectedString = "körte barack szilva körte birsalma";
         String wordToDelete = "alma";
 
-        Assertions.assertEquals(expectedString, wE.eraseWord(inputString,wordToDelete));
+        assertEquals(expectedString, wE.eraseWord(inputString,wordToDelete));
 
     }
 
