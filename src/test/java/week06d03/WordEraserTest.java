@@ -7,6 +7,15 @@ public class WordEraserTest {
 
     @Test
     public void test() {
-        Assertions.assertEquals("körte barack szilva körte birsalma", new WordEraser().eraseWord("alma körte barack alma szilva körte birsalma", "alma"));
+
+        WordEraser wE = new WordEraser();
+
+        String inputString = "alma körte barack alma szilva körte birsalma";
+        String expectedString = "körte barack szilva körte birsalma";
+        String wordToDelete = "alma";
+
+        Assertions.assertEquals(expectedString, wE.eraseWord(inputString,wordToDelete));
+
     }
+
 }
