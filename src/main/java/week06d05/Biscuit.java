@@ -2,20 +2,34 @@ package week06d05;
 
 public class Biscuit {
 
-    private BiscuitType type;
+    private BiscuitType biscuitType;
     private int gramAmount;
 
-    public Biscuit(BiscuitType type, int gramAmount) {
-        this.type = type;
+    public Biscuit(BiscuitType biscuitType, int gramAmount) {
+        this.biscuitType = biscuitType;
         this.gramAmount = gramAmount;
     }
 
-    public static Biscuit of(BiscuitType type, int gramAmount) {
-        return new Biscuit(type, gramAmount);
+    public BiscuitType getBiscuitType() {
+        return biscuitType;
+    }
+
+    public int getGramAmount() {
+        return gramAmount;
+    }
+
+    public static Biscuit of(BiscuitType biscuitType, int gramAmount) {         //visszaad nekünk egy új Biscuit példányt
+        return new Biscuit(biscuitType, gramAmount);
+
     }
 
     @Override
     public String toString() {
-        return type.toString() + ": " + gramAmount + " g";
+        StringBuilder sb = new StringBuilder();
+        sb.append(biscuitType.toString());
+        sb.append(": ");
+        sb.append(gramAmount);
+        sb.append(" g");
+        return sb.toString();
     }
 }
