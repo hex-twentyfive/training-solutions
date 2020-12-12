@@ -35,7 +35,6 @@ public class SimpleDate {
         if (month < 1 || month > 12) {
             return false;
         }
-//        if (day < 1 || day > calculateMonthLength(year, day)) {
         if (day < 1 || day > calculateMonthLength(year, day)) {
             return false;
         }
