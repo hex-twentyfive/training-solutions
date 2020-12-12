@@ -28,7 +28,7 @@ public class SimpleDate {
         return day;
     }
 
-    public boolean isCorrect(int year, int month, int day) {
+    private boolean isCorrect(int year, int month, int day) {
         if (year < 1900) {
             return false;
         }
@@ -48,7 +48,7 @@ public class SimpleDate {
         return false;
     }
 
-    public int calculateMonthLength(int year, int month) {
+    private int calculateMonthLength(int year, int month) {
         switch (month) {
             case 1:
             case 3:
