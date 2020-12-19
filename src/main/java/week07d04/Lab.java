@@ -50,4 +50,12 @@ public class Lab {
         this.completedAt = LocalDate.now();
     }
 
+    @Override
+    public String toString() {
+        return "Lab{" +
+                "title='" + title + '\'' +
+                ", completed=" + completed +
+                ", completedAt=" + completedAt +
+                '}';
+    }
 }
