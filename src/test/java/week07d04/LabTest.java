@@ -14,6 +14,8 @@ class LabTest {
 
         assertEquals("week07d04.Lab", testLab.getTitle());
         assertFalse(testLab.isCompleted());
+
+        System.out.println(testLab.toString());
     }
 
     @Test
@@ -24,6 +26,8 @@ class LabTest {
         assertEquals("week07d04.Lab", testLab.getTitle());
         assertEquals(testDate, testLab.getCompletedAt());
         assertTrue(testLab.isCompleted());
+
+        System.out.println(testLab.toString());
     }
 
     @Test
@@ -36,6 +40,8 @@ class LabTest {
         assertEquals("week07d04.Lab", testLab.getTitle());
         assertEquals(testDate, testLab.getCompletedAt());
         assertTrue(testLab.isCompleted());
+
+        System.out.println(testLab.toString());
     }
 
     @Test
@@ -48,6 +54,8 @@ class LabTest {
         assertEquals("week07d04.Lab", testLab.getTitle());
         assertEquals(testDateNow, testLab.getCompletedAt());
         assertTrue(testLab.isCompleted());
+
+        System.out.println(testLab.toString());
     }
 
 }
