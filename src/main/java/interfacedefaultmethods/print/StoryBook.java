@@ -26,5 +26,4 @@ public class StoryBook implements Printable {
         pages.add(new ColoredPage(page, color));
     }
 
-
 }

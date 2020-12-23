@@ -20,4 +20,5 @@ public class NewsPaper implements Printable {
     public void addPage(String page) {
         this.pages.add(page);
     }
+
 }

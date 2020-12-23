@@ -23,4 +23,5 @@ public class ColoredPage {
     public String getColor() {
         return color;
     }
+
 }
