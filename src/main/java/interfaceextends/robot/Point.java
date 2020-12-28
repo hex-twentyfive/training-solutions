@@ -23,4 +23,5 @@ public class Point {
     public long getZ() {
         return Z;
     }
+
 }
