@@ -1,9 +1,6 @@
-package week08day04;
+package week08d04;
 
 import org.junit.jupiter.api.Test;
-import week08d04.BadMood;
-import week08d04.GoodMood;
-import week08d04.Trainer;
 
 import static org.junit.jupiter.api.Assertions.*;
 
