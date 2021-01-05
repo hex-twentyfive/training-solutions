@@ -10,25 +10,25 @@ public class MathAlgorithms {
     legnagyobb közös osztójukat.
 */
 
-    int greatestCommonDivisor(int a, int b) {
+    public int greatestCommonDivisor(int a, int b) {
         List<Integer> divisor = getCommonDivisors(a, b);
-        int greatestDivisor = 1;
+        int greatestCommonDivisor = 1;
         for (int i = 1; i < divisor.size(); i++) {
-            if (divisor.get(i) > greatestDivisor) {
-                greatestDivisor = divisor.get(i);
+            if (divisor.get(i) > greatestCommonDivisor) {
+                greatestCommonDivisor = divisor.get(i);
             }
         }
-        return greatestDivisor;
+        return greatestCommonDivisor;
     }
 
     private List<Integer> getCommonDivisors(int a, int b) {
-        List<Integer> result = new ArrayList<>();
+        List<Integer> allCommonDivisors = new ArrayList<>();
         for (int i = 1; i <= a; i++) {
             if (a % i == 0 && b % i == 0) {
-                result.add(i);
+                allCommonDivisors.add(i);
             }
         }
-        return result;
+        return allCommonDivisors;
     }
 
 }
