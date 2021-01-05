@@ -23,7 +23,7 @@ public class MathAlgorithms {
 
     private List<Integer> getCommonDivisors(int a, int b) {
         List<Integer> allCommonDivisors = new ArrayList<>();
-        for (int i = 1; i <= a; i++) {
+        for (int i = 1; i <= Math.min(a, b); i++) {
             if (a % i == 0 && b % i == 0) {
                 allCommonDivisors.add(i);
             }
