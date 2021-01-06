@@ -19,7 +19,7 @@ public class Cv {
             String split[] = element.split("\\(");
             String splitNumber = split[1].substring(0, 1);
             int skillLevel = Integer.parseInt(splitNumber);
-            String skillName = split[0];
+            String skillName = split[0].trim();
 
             skills.add(new Skill(skillName, skillLevel));
         }
@@ -33,12 +33,10 @@ public class Cv {
             if (skill.getName().equals(skillName)) {
                 skillLevel = skill.getLevel();
             }
+        }
             if (skillLevel == 0) {
                 throw new SkillNotFoundException("No skill with the name!");
             }
-            return skillLevel;
-        }
-
         return skillLevel;
     }
 
@@ -47,7 +45,7 @@ public class Cv {
     }
 
     public List<Skill> getSkills() {
-        return new ArrayList<>(skills);
+        return skills;
     }
 
 }
