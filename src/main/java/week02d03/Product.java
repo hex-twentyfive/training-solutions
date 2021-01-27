@@ -1,4 +1,4 @@
-package week02;
+package week02d03;
 
 public class Product {
 
@@ -18,18 +18,18 @@ public class Product {
         return code;
     }
 
-    public boolean areTheyEqual (Product p) {
 
+    public boolean areTheyEqual (Product p) {
         boolean equality = name.equals(p.getName());
 
-        int lenghtDifference = code.length() - p.code.length();
-        boolean lengthCriterion = Math.abs(lenghtDifference) < 2 ;
+        int lengthDifference = code.length() - p.code.length();
+        boolean lengthCriterion = Math.abs(lengthDifference) < 2 ;
 
         return   equality && lengthCriterion;
     }           //2. verzió // p.getname() a paraméteren van meghívva
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
 
         String testProduct1 = "Brick";
         String testCode1 = "1911";
@@ -52,4 +52,5 @@ public class Product {
         System.out.println("\nAre the first and second products the same? ==> " + instProduct1.areTheyEqual(instProduct2));
         System.out.println("Are the first and third products the same? ==> " + instProduct1.areTheyEqual(instProduct3));
     }
+
 }
