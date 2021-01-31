@@ -1,4 +1,4 @@
-package week02;
+package week02d04;
 
 import java.util.Scanner;
 
@@ -19,9 +19,10 @@ public class InputNames {
 
         System.out.print("\nA név tömb tartalma: ");
         for ( int i = 0 ; i < nameArray.length ; i++) {
-            System.out.print(nameArray[i] + ", ");
+            System.out.print("\n" + (i+1) + ". " + nameArray[i]);
         }
         System.out.println("\n");
 
     }
+
 }
