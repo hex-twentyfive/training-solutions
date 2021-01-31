@@ -1,4 +1,4 @@
-package week03;
+package week03d04;
 
 public class PhoneParser {
 
@@ -10,10 +10,15 @@ public class PhoneParser {
     }
 
     public static void main(String[] args) {
+
         PhoneParser parser = new PhoneParser();
+
         Phone phone = parser.parsePhone("305551911");
-        System.out.println(phone.getPrefix());
-        System.out.println(phone.getNumber());
-        System.out.println(phone.toString());
+
+        System.out.println("A körzetszám: " + phone.getPrefix());
+        System.out.println("A telefonszám: " + phone.getNumber());
+        System.out.println("A teljes telefonszám: " + phone.toString());
+
     }
+
 }
