@@ -21,7 +21,7 @@ public class CoronaCounter {
     public int coronaCounter(List<String> rows, String searchedWord) {
         int koronavirusCounter = 0;
         for (String row: rows) {
-            if (row.contains(searchedWord)) {
+            if (row.toLowerCase().contains(searchedWord.toLowerCase())) {
                 koronavirusCounter ++;
             }
         }
@@ -46,6 +46,15 @@ public class CoronaCounter {
 
     public Path getFileLocation() {
         return fileLocation;
+    }
+
+    public static void main(String[] args) {
+        CoronaCounter access = new CoronaCounter();
+        access.fileReader(access.getFileLocation());
+
+        System.out.println(access.coronaCounter(access.getReadFileRows(), "koronavírus"));
+        System.out.println(access.coronaCounter(access.getReadFileRows(), "Trump"));
+        System.out.println(access.coronaCounter(access.getReadFileRows(), "Biden"));
     }
 
 }
