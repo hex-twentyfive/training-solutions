@@ -22,7 +22,7 @@ class CoronaCounterTest {
         String testWordToSearch = "koronavírus";
         access.fileReader(access.getFileLocation());
 
-        assertEquals(6, access.coronaCounter(access.getReadFileRows(), testWordToSearch));
+        assertEquals(9, access.coronaCounter(access.getReadFileRows(), testWordToSearch));
     }
 
 }
