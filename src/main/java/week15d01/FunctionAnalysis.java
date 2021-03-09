@@ -30,7 +30,7 @@ public class FunctionAnalysis {
 
     public Map.Entry<Double, Double> returnsTheMaximumValueOfTheFunctionWithEntryMap(Map<Double, Double> graph) {
         if ( graph.isEmpty()) {
-            throw new IllegalArgumentException("<!> Parameter with empty value is not allowed! <!>");
+            throw new IllegalArgumentException("<!> Parameter with empty value is not allowed! <!>" );
         }
         Map.Entry<Double, Double> result = null;
         for (Map.Entry<Double, Double> entry: graph.entrySet()) {
