@@ -3,12 +3,11 @@ package exam03;
 public class Boat {
 
     private String name;
-
     private int maxPassengers;
 
-    public Boat(String name, int maxPassengers) {
+    public Boat(String name, int maxPassenger) {
         this.name = name;
-        this.maxPassengers = maxPassengers;
+        this.maxPassengers = maxPassenger;
     }
 
     public String getName() {

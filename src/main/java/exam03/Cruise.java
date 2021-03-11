@@ -5,15 +5,10 @@ import java.util.*;
 
 public class Cruise {
 
-
     private Boat boat;
-
     private LocalDate sailing;
-
     private double basicPrice;
-
     private List<Passenger> passengers = new ArrayList<>();
-
 
     public Cruise(Boat boat, LocalDate sailing, double basicPrice) {
         this.boat = boat;
@@ -21,53 +16,51 @@ public class Cruise {
         this.basicPrice = basicPrice;
     }
 
-    public void bookPassenger(Passenger passenger) {
-        if (getPassengers().size() < boat.getMaxPassengers()) {
+    public void bookPassenger(Passenger passenger) {       //1.
+        if (passengers.size() < boat.getMaxPassengers()) {
             passengers.add(passenger);
         } else {
-            throw new IllegalArgumentException("There is not enough seat on the ship for the passenger!");
+            throw new IllegalArgumentException("There is not enough seat on the boat for teh passenger!");
         }
     }
 
-    public double getPriceForPassenger(Passenger passenger) {
-        return basicPrice * passenger.getCruiseClass().getPriceRate();
-
+    public double getPriceForPassenger(Passenger passenger) {       //2.    ???
+        return passenger.getCruiseClass().getPriceRate() * basicPrice;
     }
 
-    public Passenger findPassengerByName(String name) {
-        Passenger lookUpPassenger = null;
-        for (Passenger passenger : passengers) {
-            if (passenger.getName().equals(name)) {
-                lookUpPassenger = passenger;
+    public Passenger findPassengerByName(String name) {             //3.
+        for (Passenger e : passengers) {
+            if (e.getName().equals(name)) {
+                return e;
             }
         }
-        return lookUpPassenger;
+        throw new IllegalStateException("There is no passenger with this name! --> " + name);
     }
 
-    public List<String> getPassengerNamesOrdered() {
+    public List<String> getPassengerNamesOrdered() {                //4.
         List<String> names = new ArrayList<>();
-        for (Passenger passenger: passengers){
-            names.add(passenger.getName());
+        for (Passenger e : passengers) {
+            names.add(e.getName());
         }
         Collections.sort(names);
         return names;
     }
 
-    public double sumAllBookingsCharged() {
-        double income = 0.0;
-        for (Passenger passenger: passengers){
-            income += passenger.getCruiseClass().getPriceRate() * basicPrice;
+    public double sumAllBookingsCharged() {                     //5.
+        double sumIncome = 0.0;
+        for (Passenger e : passengers) {
+            sumIncome += getPriceForPassenger(e);
         }
-        return income;
+        return sumIncome;
     }
 
-    public Map<CruiseClass, Integer> countPassengerByClass() {
+    public Map<CruiseClass, Integer> countPassengerByClass() {      //6.
         Map<CruiseClass, Integer> reservations = new HashMap<>();
-        for (Passenger passenger: passengers){
-            if (!reservations.containsKey(passenger.getCruiseClass())) {
-                reservations.put(passenger.getCruiseClass(), 1);
+        for (Passenger e : passengers) {
+            if (!reservations.containsKey(e.getCruiseClass())) {
+                reservations.put(e.getCruiseClass(), 1);
             } else {
-                reservations.put(passenger.getCruiseClass(), reservations.get(passenger.getCruiseClass()) + 1);
+                reservations.put(e.getCruiseClass(), reservations.get(e.getCruiseClass()) + 1);
             }
         }
         return reservations;
@@ -86,7 +79,7 @@ public class Cruise {
     }
 
     public List<Passenger> getPassengers() {
-        return new ArrayList<>(passengers);
+        return passengers;
     }
 
 }

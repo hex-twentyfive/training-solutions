@@ -3,7 +3,6 @@ package exam03;
 public class Passenger {
 
     private String name;
-
     private CruiseClass cruiseClass;
 
     public Passenger(String name, CruiseClass cruiseClass) {

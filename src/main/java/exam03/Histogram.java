@@ -10,8 +10,7 @@ public class Histogram {
         try {
             String line;
             while ((line = reader.readLine()) != null) {
-
-                sb.append(createStarFromLine(line));
+                sb.append(lineConvertToStars(line));
             }
         } catch (IOException ioe) {
             throw new IllegalStateException("Can not read the file!", ioe);
@@ -19,18 +18,13 @@ public class Histogram {
         return sb.toString();
     }
 
-    private String createStarFromLine(String line) {
-        StringBuilder sb = new StringBuilder();
+    private String lineConvertToStars(String line) {
         try {
-            int numberFromLine = Integer.parseInt(line);
-            for (int i = 0; i < numberFromLine; i++) {
-                sb.append("*");
-            }
-            sb.append("\n");
-        } catch (NumberFormatException nfe) {
-            throw new IllegalArgumentException("The line can only contain number! --> " + line);
+            return "*".repeat(Integer.parseInt(line)) + "\n";
         }
-        return sb.toString();
+        catch (IllegalArgumentException iae) {
+            throw new IllegalArgumentException("The lines can contain only numbers! --> " + line, iae);
+        }
     }
 
 }
